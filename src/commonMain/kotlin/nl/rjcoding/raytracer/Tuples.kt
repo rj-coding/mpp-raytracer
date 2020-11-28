@@ -55,3 +55,11 @@ fun neg(t: Tuple): Tuple = tuple(-t.x, -t.y, -t.z, -t.w)
 fun times(t: Tuple, s: Double): Tuple = tuple(s * t.x, s * t.y, s * t.z, s * t.w)
 
 fun div(t: Tuple, s: Double): Tuple = times(t, 1.0/s)
+
+fun dot(a: Tuple, b: Tuple): Double = a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w
+
+fun cross(a: Tuple, b: Tuple): Tuple = vector(
+        a.y * b.z - a.z * b.y,
+        a.z * b.x - a.x * b.z,
+        a.x * b.y - a.y * b.x
+)

@@ -123,4 +123,17 @@ class TupleTests {
         assertEquals(1.0, norm.magnitude)
     }
 
+    @Test
+    fun dot() {
+        assertTrue { eq(20.0, dot(vector(1, 2, 3), vector(2, 3, 4))) }
+    }
+
+    @Test
+    fun cross() {
+        val a = vector(1, 2, 3)
+        val b = vector(2, 3, 4)
+        assertTrue { eq(vector(-1, 2, -1), cross(a, b)) }
+        assertTrue { eq(vector(1, -2, 1), cross(b, a)) }
+    }
+
 }
