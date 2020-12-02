@@ -136,4 +136,31 @@ class TupleTests {
         assertTrue { eq(vector(1, -2, 1), cross(b, a)) }
     }
 
+    @Test
+    fun addingColors() {
+        val c1 = color(0.9, 0.6, 0.75)
+        val c2 = color(.7, 0.1, .25)
+        assertTrue { eq(color(1.6, 0.7, 1.0), plus(c1, c2)) }
+    }
+
+    @Test
+    fun substractColors() {
+        val c1 = color(0.9, 0.6, 0.75)
+        val c2 = color(.7, 0.1, .25)
+        assertTrue { eq(color(0.2, 0.5, 0.5), minus(c1, c2)) }
+    }
+
+    @Test
+    fun multiplyingColorsByAScaler() {
+        val c = color(0.2, 0.3, 0.4)
+        assertTrue { eq(color(0.4, 0.6, 0.8), times(c, 2.0)) }
+    }
+
+    @Test
+    fun multiplyingColors() {
+        val c1 = color(1.0, 0.2, 0.4)
+        val c2 = color(0.9, 1.0, 0.1)
+        assertTrue { eq(color(0.9, 0.2, .04), hadamardProduct(c1, c2)) }
+    }
+
 }
